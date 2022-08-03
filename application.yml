@@ -6,3 +6,23 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+
+one:
+  intuit:
+    notification:
+      activemq:
+        broker:
+          url: tcp://localhost:61616
+          username: admin
+          password: admin
+      destination: intuit.global.qa.platform.network.oinp.queue
+      initial-redelivery-delay-millis: 5000
+      redelivery-delay-millis: 5000
+      max-redelivery-delay-millis: 5
+      is-use-exponential-back-off: false
+      back-off-multiplier: 5
+      concurrent-connnections: 10-10
+      session-transacted: false
+      auto-startup: true
+      max:
+          retry: 5
